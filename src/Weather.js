@@ -8,10 +8,10 @@ export default function Weather(props) {
 
 
     const [city, setCity] = useState(props.defaultCity);
-    const [data, setData] = useState({ready: false});
+    const [wdata, setWData] = useState({ready: false});
 function handleResponse(response){
 
-setData({
+setWData({
     ready: true,
     city: response.data.name,
     date: new Date(response.data.dt * 1000),
@@ -25,7 +25,7 @@ setData({
 function searchResult() {
 
  const apiKey = `2d50c0d7967e795bde908aa93c3e908d`;
- let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric
+ let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric
 `;
 axios.get(apiUrl).then(handleResponse);
 }
@@ -40,7 +40,7 @@ function getCity(event) {
     
 }
 
-if (data.ready) {return (
+if (wdata.ready) {return (
      <div className="weather-app">
             <div className="row"> 
             <div className="col-3">
@@ -51,7 +51,7 @@ if (data.ready) {return (
                 <input type="search" placeholder="Enter a location" onChange={getCity}/>
                 <input type="submit" value="Search" />
                 </form>
-                <Weathersearch data={data} />
+                <Weathersearch data={wdata} />
             </div>
             </div>
 </div>); 

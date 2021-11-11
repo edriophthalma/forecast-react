@@ -1,7 +1,7 @@
 import React from "react";
 import ForecastDate from "./ForecastDate";
 import Weather from "./Weather";
-
+import TempConversion from "./TempConversion";
 export default function Weathersearch(props) {
     return (
        <div className="weathersearch">
@@ -16,7 +16,7 @@ export default function Weathersearch(props) {
 </ul></div>    
      <div className="col-9">
     <ul>
-     <li>Temperature: {Math.round(props.data.temperature)}ºC | ºF</li>
+     <li><TempConversion celsius={props.data.temperature} /></li>
     <li>Humidity: {props.data.humidity}%</li>
     <li>Windspeed: {props.data.windspeed} Kn</li>
     </ul></div> 
