@@ -1,7 +1,45 @@
 .weather-app {
-  border: 1px solid;
+  margin: auto;
+  display: block;
+  text-align: center;
+  padding: 30px auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+
+  height: 200px;
+  width: 800px;
+  background: linear-gradient(#fcd18188, #fff78e25, #f39a6741);
+  border-radius: 2%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 ul {
   list-style: none;
+}
+
+input {
+  background-color: #fff78e25;
+  border-radius: 8px;
+  opacity: 65%;
+  border: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: all 0.9s ease;
+}
+
+:focus {
+  outline: 3px solid #f39a6741;
+}
+input:hover {
+  background-color: #f39a6741;
+  pointer-events: visiblePainted;
+}
+
+footer {
+  color: #f39a6741;
 }
