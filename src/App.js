@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <div className="container">
         <Weather />
-       <footer><a href="https://github.com/edriophthalma/weather-react.git" alt="Giulia's code">Open-source code by Giulia D'Angelo</a></footer>
+       <footer><a href="https://github.com/edriophthalma/forecast-react.git" alt="Giulia's code">Open-source code by Giulia D'Angelo</a></footer>
       </div>
     </div>
   );
