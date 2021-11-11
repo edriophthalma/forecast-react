@@ -7,14 +7,14 @@ import Weathersearch from "./Weathersearch";
 export default function Weather(props) {
 
 
-    
+    const [city, setCity] = useState(props.defaultCity);
     const [data, setData] = useState({ready: false});
 function handleResponse(response){
 
 setData({
     ready: true,
     city: response.data.name,
-    date: new Date(response.data.dt *1000),
+    date: new Date(response.data.dt * 1000),
     description: response.data.weather[0].description,
     humidity: response.data.main.humidity,
     windspeed: response.data.wind.speed,
@@ -22,15 +22,33 @@ setData({
     temperature: response.data.main.temp,});
 
 }
+function searchResult() {
+
+ const apiKey = `2d50c0d7967e795bde908aa93c3e908d`;
+ let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric
+`;
+axios.get(apiUrl).then(handleResponse);
+}
+
+function getSubmit(event) {
+event.preventDefault();
+searchResult();
+
+}
+function getCity(event) {
+    setCity(event.target.value);
+    
+}
+
 if (data.ready) {return (
      <div className="weather-app">
             <div className="row"> 
             <div className="col-3">
-                <h1>Gibellina</h1>
+                <h1>Weather in {city}</h1>
             </div>
             <div className="col-9">
-            <form> 
-                <input type="search" placeholder="Enter a location"/>
+            <form onSubmit={getSubmit}> 
+                <input type="search" placeholder="Enter a location" onChange={getCity}/>
                 <input type="submit" value="Search" />
                 </form>
                 <Weathersearch data={data} />
@@ -40,11 +58,8 @@ if (data.ready) {return (
 }
         else 
 {
-    const apiKey = `2d50c0d7967e795bde908aa93c3e908d`;
    
-    let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric
-`;
-axios.get(apiUrl).then(handleResponse);
-return "something";
+ searchResult();
+ return <div>{city}</div>;
 }
 }

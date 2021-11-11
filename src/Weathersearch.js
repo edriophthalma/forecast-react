@@ -1,5 +1,6 @@
 import React from "react";
 import ForecastDate from "./ForecastDate";
+import Weather from "./Weather";
 
 export default function Weathersearch(props) {
     return (
@@ -8,7 +9,7 @@ export default function Weathersearch(props) {
  <div className="row">
      <div className="col-3">
      <ul>
-    
+    <li><Weather defaultCity={props.data.name}/></li>
     <li><ForecastDate date={props.data.date} /></li>
     <li><img src={props.data.icon} alt="icon" /></li>
     <li className="text-capitalize">{props.data.description}</li>
