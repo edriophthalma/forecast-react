@@ -14,7 +14,7 @@ function handleResponse(response){
 setWData({
     ready: true,
     city: response.data.name,
-    date: new Date(response.data.dt * 1000),
+    date: formatDate(response.data.timezone),
     description: response.data.weather[0].description,
     humidity: response.data.main.humidity,
     windspeed: response.data.wind.speed,
@@ -22,6 +22,14 @@ setWData({
     temperature: response.data.main.temp,});
 
 }
+function formatDate(timezone) {
+    let d = new Date();
+    let localTime = d.getTime();
+    let localOffset = d.getTimezoneOffset() * 60000;
+    let utc = localTime + localOffset;
+    return new Date(utc + 1000 * timezone);
+  }
+
 function searchResult() {
 
  const apiKey = `2d50c0d7967e795bde908aa93c3e908d`;

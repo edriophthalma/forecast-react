@@ -16,7 +16,7 @@ export default function TempConversion(props) {
     return(
         <div className="temperature">
         <span>
-        <strong>{Math.round(props.celsius)}</strong></span><span>ºC|º<a href="/" onclick={convertF}>F</a>
+        <strong>{Math.round(props.celsius)}</strong></span><span>ºC|º<a href="/" onClick={convertF}>F</a>
      </span>
         </div>
     );}
@@ -24,10 +24,11 @@ export default function TempConversion(props) {
         let fahrenheit = (props.celsius * 9) / 5 + 32;
         return (
          <div className="temperature">
+             
         <span className="TempConversion">
-            <strong>{Math.round(fahrenheit)}</strong>|ºF</span><span>
-         <a href="/" onclick={convertC}>ºC</a>
-        </span>
+            <strong>{Math.round(fahrenheit)}</strong></span>
+        
+        |ºF<span> <a href="/" onClick={convertC}>ºC</a></span>
         </div>  
         );
     }
