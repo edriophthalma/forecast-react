@@ -4,6 +4,7 @@ import axios from "axios";
 
 import Weathersearch from "./Weathersearch";
 
+
 export default function Weather(props) {
 
 
@@ -60,7 +61,39 @@ if (wdata.ready) {return (
                 <input type="submit" value="Search" />
                 </form>
                 <Weathersearch data={wdata} />
+              
             </div>
+             <table>
+              <tr >
+                <td><ul>
+                    <li>Fri</li>
+                    <li><img src={wdata.icon} alt="icon" /></li>
+                    <li>{wdata.description}</li>  
+                    </ul>
+                    </td>
+                <td> <ul>
+                    <li>Sat</li>
+                    <li><img src={wdata.icon} alt="icon" /></li>
+                    <li>{wdata.description}</li>  
+                    </ul>
+                    </td>
+                <td> <ul>
+                    <li>Sun</li>
+                    <li><img src={wdata.icon} alt="icon" /></li>
+                     <li>{wdata.description}</li>  
+                     </ul></td>
+                 <td><ul>
+                     <li>Mon</li>
+                    <li><img src={wdata.icon} alt="icon" /></li>
+                     <li>{wdata.description}</li>  
+                    </ul></td>
+                 <td><ul>
+                     <li>Tue</li>
+                    <li><img src={wdata.icon} alt="icon" /></li>
+                     <li>{wdata.description}</li>  
+                     </ul></td>
+              </tr>
+          </table>
             </div>
 </div>); 
 }
