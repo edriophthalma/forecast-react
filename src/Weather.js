@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Weather.css";
 import axios from "axios";
-
+import Icon from "./Icon";
 import Weathersearch from "./Weathersearch";
 import TableForecast from "./TableForecast";
 
@@ -12,8 +12,7 @@ export default function Weather(props) {
     const [city, setCity] = useState(props.defaultCity);
     const [wdata, setWData] = useState({ready: false});
 function handleResponse(response){
-    console.log(response.data);
-
+    
 setWData({
     ready: true,
     city: response.data.name,
@@ -22,7 +21,7 @@ setWData({
     coordinates: response.data.coord,
     humidity: response.data.main.humidity,
     windspeed: response.data.wind.speed,
-    icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+    icon: response.data.weather[0].icon,
     temperature: response.data.main.temp,});
 
 }
@@ -66,39 +65,7 @@ if (wdata.ready) {return (
                 <Weathersearch data={wdata} />
               
             </div>
-             <table>
-                 <tbody>
-              <tr >
-                <td><ul>
-                    <li>Fri</li>
-                    <li><img src={wdata.icon} alt="icon" /></li>
-                    <li>{wdata.description}</li>  
-                    </ul>
-                    </td>
-                <td> <ul>
-                    <li>Sat</li>
-                    <li><img src={wdata.icon} alt="icon" /></li>
-                    <li>{wdata.description}</li>  
-                    </ul>
-                    </td>
-                <td> <ul>
-                    <li>Sun</li>
-                    <li><img src={wdata.icon} alt="icon" /></li>
-                     <li>{wdata.description}</li>  
-                     </ul></td>
-                 <td><ul>
-                     <li>Mon</li>
-                    <li><img src={wdata.icon} alt="icon" /></li>
-                     <li>{wdata.description}</li>  
-                    </ul></td>
-                 <td><ul>
-                     <li>Tue</li>
-                    <li><img src={wdata.icon} alt="icon" /></li>
-                     <li>{wdata.description}</li>  
-                     </ul></td>
-              </tr>
-              </tbody>
-          </table>
+             
             </div>
             <TableForecast coordinates={wdata.coordinates}/>
 </div>); 
@@ -107,6 +74,5 @@ if (wdata.ready) {return (
 {
    
  searchResult();
- return <div>{city}</div>;
-}
+ return <div>{city}</div>}
 }
