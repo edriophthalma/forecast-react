@@ -16,12 +16,14 @@ export default function TableForecast(props) {
        
        
        
-        return (<div>
-            <table><tbody><td><Days data={forecast[1]}/></td>
-       <td> <Days data={forecast[2]}/></td>
-       <td> <Days data={forecast[3]}/></td>
-       <td> <Days data={forecast[4]}/></td>
-       <td> <Days data={forecast[5]}/></td></tbody></table></div>) }
+        return (
+            <table><tbody><tr>
+                <td><Days data={forecast[1]}/></td>
+      <td> <Days data={forecast[2]}/></td>
+      <td><Days data={forecast[3]}/></td>
+       <td><Days data={forecast[4]}/></td>
+       <td><Days data={forecast[5]}/></td>
+       </tr></tbody></table>) }
  else { 
     let apiKey = "2d50c0d7967e795bde908aa93c3e908d";
     let longitude = props.coordinates.lon;
