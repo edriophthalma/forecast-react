@@ -8,6 +8,9 @@
   font-weight: 500;
 }
 
-a:link {
+a:link,
+a:visited,
+a:hover {
+  text-decoration: none;
   color: #f7b62a;
 }
