@@ -13,7 +13,7 @@ export default function TableForecast(props) {
 }
 
     if(loaded) {
-        console.log(forecast);
+       
        
        
         return (<div>
