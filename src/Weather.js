@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import "./Weather.css";
+
 import axios from "axios";
 
 import Weathersearch from "./Weathersearch";
 import TableForecast from "./TableForecast";
-
+import "./Weather.css";
 
 export default function Weather(props) {
 

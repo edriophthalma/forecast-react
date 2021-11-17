@@ -26,7 +26,7 @@ export default function Days(props) {
                  <ul className="Days">
                     <li>{day()}</li>
                     <li><strong>{MaxTemp()}</strong>{MinTemp()}</li>
-                     <li><Icon code={props.data.weather[0].icon} size={50}/></li>
+                     <li><Icon code={props.data.weather[0].icon} size={30}/></li>
                     
                     </ul>
                     

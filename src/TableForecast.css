@@ -1,0 +1,8 @@
+:root {
+  --bodyfont: "Mukta", sans-serif;
+  --highlightfont: "Roboto", sans-serif;
+}
+
+.TableForecast {
+  margin-right: 2em;
+}
