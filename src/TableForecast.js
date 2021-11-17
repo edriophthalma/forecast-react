@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Days from "./Days";
 
 
 
@@ -12,44 +13,15 @@ export default function TableForecast(props) {
 }
 
     if(loaded) {
+        console.log(forecast);
        
        
-        return (<div><table>
-                 <tbody>
-              <tr >
-                <td><ul>
-                    <li>{forecast[0].dt}</li>
-                    <li>{forecast[0].temp.max}º</li>
-                    <li>{forecast[0].temp.min}º</li>  
-                   
-                    
-                    </ul>
-                    </td>
-                     <td> <ul>
-                   <li>{forecast[1].temp.max}º</li>
-                    <li>{forecast[1].temp.min}º</li>  
-                    <li><img src={forecast[1].weather[0].icon} alt="icon" /></li>
-                    </ul>
-                    </td>
-                <td> <ul>
-                   <li>{forecast[0].temp.max}º</li>
-                    <li>{forecast[0].temp.min}º</li>  
-                    <li><img src={forecast.icon} alt="icon" /></li> 
-                     </ul></td>
-                 <td><ul>
-                     <li>{forecast[0].temp.max}º</li>
-                    <li>{forecast[0].temp.min}º</li>  
-                    <li><img src={forecast.icon} alt="icon" /></li>  
-                    </ul></td>
-                 <td><ul>
-                    <li>{forecast[0].temp.max}º</li>
-                    <li>{forecast[0].temp.min}º</li>  
-                    <li><img src={forecast.icon} alt="icon" /></li>  
-                     </ul></td>
-               
-              </tr>
-              </tbody>
-          </table></div>); }
+        return (<div>
+            <table><tbody><td><Days data={forecast[1]}/></td>
+       <td> <Days data={forecast[2]}/></td>
+       <td> <Days data={forecast[3]}/></td>
+       <td> <Days data={forecast[4]}/></td>
+       <td> <Days data={forecast[5]}/></td></tbody></table></div>) }
  else { 
     let apiKey = "2d50c0d7967e795bde908aa93c3e908d";
     let longitude = props.coordinates.lon;

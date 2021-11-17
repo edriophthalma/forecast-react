@@ -12,7 +12,7 @@ export default function Weathersearch(props) {
      <ul>
     <li><Weather defaultCity={props.data.name}/></li>
     <li><ForecastDate date={props.data.date} /></li>
-    <li><Icon code={props.data.icon} /></li>
+    <li><Icon code={props.data.icon} size={80} /></li>
     <li className="text-capitalize">{props.data.description}</li>
 </ul></div>    
      <div className="col-9">
