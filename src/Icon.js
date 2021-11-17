@@ -28,7 +28,7 @@ export default function Icon(props)  {
     <div>
       <ReactSkycon
         icon={codeMapping[props.code]}
-      color="#fcd18188"
+      color="#f7b62a"
       size={props.size}
       animate={true} />
     </div>

@@ -54,17 +54,18 @@ function getCity(event) {
 if (wdata.ready) {return (
      <div className="weather-app">
             <div className="row"> 
-            <div className="col-3">
-                <h1>Weather in {city}</h1>
+            <div className="col-6">
+                <h1 className="title">Weather in {city}</h1>
             </div>
-            <div className="col-9">
+            <div className="col-6">
             <form onSubmit={getSubmit}> 
                 <input type="search" placeholder="Enter a location" onChange={getCity}/>
                 <input type="submit" value="Search" />
-                </form>
-                <Weathersearch data={wdata} />
-              
+                </form>   
             </div>
+            <div className="weather-search">
+                <Weathersearch data={wdata} /></div>
+           
              
             </div>
             <TableForecast coordinates={wdata.coordinates}/>

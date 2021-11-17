@@ -1,0 +1,13 @@
+:root {
+  --bodyfont: "Mukta", sans-serif;
+  --highlightfont: "Roboto", sans-serif;
+}
+.temperature {
+  font-family: var(--highlightfont);
+  font-weight: normal;
+  font-weight: 500;
+}
+
+a:link {
+  color: #f7b62a;
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import Icon from "./Icon";
+import "./Days";
 
 
 export default function Days(props) {
@@ -22,7 +23,8 @@ export default function Days(props) {
     }
 
     return (<div>
-                 <ul><li>{day()}</li>
+                 <ul className="Days">
+                    <li>{day()}</li>
                     <li><strong>{MaxTemp()}</strong>{MinTemp()}</li>
                      <li><Icon code={props.data.weather[0].icon} size={50}/></li>
                     

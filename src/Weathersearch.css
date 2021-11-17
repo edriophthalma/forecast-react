@@ -1,0 +1,11 @@
+:root {
+  --bodyfont: "Mukta", sans-serif;
+  --highlightfont: "Roboto", sans-serif;
+}
+
+.date {
+  font-family: var(--bodyfont);
+  font-weight: normal;
+
+  font-weight: 500;
+}

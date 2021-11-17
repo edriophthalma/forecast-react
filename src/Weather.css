@@ -1,3 +1,8 @@
+:root {
+  --bodyfont: "Mukta", sans-serif;
+  --highlightfont: "Roboto", sans-serif;
+}
+
 .weather-app {
   margin: auto;
   display: block;
@@ -13,8 +18,8 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
 
-  height: 600px;
-  width: 800px;
+  height: 500px;
+  width: 600px;
   background: linear-gradient(#fcd18188, #fff78e25, #f39a6741);
   border-radius: 2%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -45,10 +50,14 @@ footer {
   color: #f39a6741;
 }
 
-table {
-  display: block;
-  text-align: center;
-}
 td {
   font-size: 15px;
+}
+.title {
+  font-family: var(--bodyfont);
+}
+
+a {
+  text-decoration: none;
+  color: #f7b62a;
 }
