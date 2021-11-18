@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Days from "./Days";
 import "./TableForecast.css";
@@ -9,6 +9,11 @@ import "./TableForecast.css";
 export default function TableForecast(props) {
     const [loaded, goLoaded] = useState(false);
     const [forecast, setForecast] = useState(null);
+
+    useEffect (() => {
+      goLoaded(false);} , [props.coordinates]);
+    
+
  function DailyForecast(response){
  setForecast(response.data.daily); 
  goLoaded(true);
