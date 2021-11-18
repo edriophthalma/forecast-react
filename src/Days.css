@@ -1,9 +1,0 @@
-:root {
-  --bodyfont: "Mukta", sans-serif;
-  --highlightfont: "Roboto", sans-serif;
-}
-
-.days {
-  display: flex;
-  font-family: var(--highlightfont);
-}

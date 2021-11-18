@@ -3,6 +3,10 @@
   --highlightfont: "Roboto", sans-serif;
 }
 
-.TableForecast {
-  margin-right: 2em;
+.Days {
+  font-family: var(--highlightfont);
+  font-size: 15px;
+
+  width: 20px;
+  height: 20px;
 }
