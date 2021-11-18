@@ -1,24 +1,23 @@
 import React, { useState } from "react";
-
-import axios from "axios";
-
 import Weathersearch from "./Weathersearch";
 import TableForecast from "./TableForecast";
+import axios from "axios";
 import "./Weather.css";
 
 export default function Weather(props) {
 
 
     const [city, setCity] = useState(props.defaultCity);
-    const [wdata, setWData] = useState({ready: false});
+    const [wdata, setWData] = useState({ ready: false });
 function handleResponse(response){
     
 setWData({
     ready: true,
+    coordinates: response.data.coord,
     city: response.data.name,
     date: formatDate(response.data.timezone),
     description: response.data.weather[0].description,
-    coordinates: response.data.coord,
+    
     humidity: response.data.main.humidity,
     windspeed: response.data.wind.speed,
     icon: response.data.weather[0].icon,
@@ -32,10 +31,14 @@ function formatDate(timezone) {
     let utc = localTime + localOffset;
     return new Date(utc + 1000 * timezone);
   }
-
+function getCity(event) {
+    setCity(event.target.value);
+    
+}
+  
 function searchResult() {
 
- const apiKey = `2d50c0d7967e795bde908aa93c3e908d`;
+ const apiKey = "2d50c0d7967e795bde908aa93c3e908d";
  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric
 `;
 axios.get(apiUrl).then(handleResponse);
@@ -46,10 +49,7 @@ event.preventDefault();
 searchResult();
 
 }
-function getCity(event) {
-    setCity(event.target.value);
-    
-}
+
 
 if (wdata.ready) {return (
      <div className="weather-app">
@@ -68,7 +68,7 @@ if (wdata.ready) {return (
            
              
             </div>
-            <TableForecast coordinates={wdata.coordinates}/>
+            <TableForecast coordinates={wdata.coordinates} />
 </div>); 
 }
         else 
