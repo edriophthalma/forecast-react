@@ -34,8 +34,8 @@ function load() {
            <div className="row">
   {forecast.map(function(dailyForecast, index) { if (index >= 1 && index <= 5) {
                     return (<div className="col" key={index}><Days data={dailyForecast} />
-               </div>)} else{ return null;}}
-   )} </div>)</div>);
+               </div>);} else{ return null;}}
+   )} </div></div>);
         }
        
  else 
